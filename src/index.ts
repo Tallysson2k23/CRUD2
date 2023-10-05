@@ -1,4 +1,13 @@
 import "reflect-metadata";
+import { AppDataSource } from "./database/data-source";
 
-console.log("Hello wordd!");
-console.log("oiiiii")
+const main = async () => {
+    try {
+        await AppDataSource.initialize();
+        console.log("Banco de dados conectado com sucesso!");
+    } catch (erro) {
+        console.log(erro);
+    }
+}
+
+main();
